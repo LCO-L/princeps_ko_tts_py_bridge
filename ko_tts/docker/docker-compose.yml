@@ -1,0 +1,54 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+#  Korean TTS - Docker Compose / 한국어 TTS - Docker Compose
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+#  Usage / 사용법:
+#    docker-compose up -d        # Start service / 서비스 시작
+#    docker-compose down         # Stop service / 서비스 중지
+#    docker-compose logs -f      # View logs / 로그 보기
+#
+#  API: http://localhost:9999
+#
+# ═══════════════════════════════════════════════════════════════════════════════
+
+version: '3.8'
+
+services:
+  ko-tts:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ko-tts
+    ports:
+      - "9999:9999"
+    volumes:
+      # Model cache (persist across restarts)
+      - ko_tts_models:/app/models
+      # Audio cache
+      - ko_tts_cache:/app/audio_cache
+    environment:
+      - HF_HOME=/app/models
+      - TRANSFORMERS_CACHE=/app/models
+      # Uncomment for GPU support
+      # - CUDA_VISIBLE_DEVICES=0
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9999/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    # GPU support (uncomment if needed)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+volumes:
+  ko_tts_models:
+    name: ko_tts_models
+  ko_tts_cache:
+    name: ko_tts_cache

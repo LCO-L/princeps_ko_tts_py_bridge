@@ -1,0 +1,42 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+#  MAEUM Korean TTS Dependencies (Python 3.10)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# Web Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+
+# Audio
+soundfile>=0.12.1
+librosa>=0.10.1
+scipy>=1.11.0
+numpy>=1.24.0,<2.0.0
+
+# ML Core
+torch>=2.1.0
+torchaudio>=2.1.0
+transformers>=4.36.0
+
+# TTS Engines (Korean support)
+# Option 1: MeloTTS (lightweight, good Korean)
+melotts>=0.1.0
+
+# Option 2: CosyVoice dependencies (if using)
+# Uncomment below for CosyVoice support:
+# onnxruntime>=1.16.0
+# ttsfrd>=0.4.2
+
+# Korean NLP
+python-mecab-ko>=1.0.0
+konlpy>=0.6.0
+g2pk>=0.9.4
+
+# Utilities
+pydantic>=2.0.0
+aiofiles>=23.0.0
+python-dotenv>=1.0.0
+httpx>=0.25.0
+
+# Monitoring
+prometheus-client>=0.18.0
