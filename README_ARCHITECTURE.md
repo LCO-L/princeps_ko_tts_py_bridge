@@ -35,9 +35,7 @@ Binding both into a single process or environment inevitably leads to:
   A stable, explicit boundary (HTTP / gRPC / UNIX socket) connecting the two.
 
 [ Modern Application Runtime ]
-|
-|  Stable Interface
-v
+        ↓  Stable Interface
 [ Isolated Runtime Capsule ]
 (legacy runtime + fragile native stack)
 
