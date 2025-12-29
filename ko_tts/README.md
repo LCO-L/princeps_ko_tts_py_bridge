@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python](https://img.shields.io/badge/Python-3.12+-green.svg)](https://python.org)
 
-> 🌉 **Bridge the Gap** - 최고 품질 한국어 TTS 엔진들은 Python 3.10/3.11만 지원합니다.
+> 🌉 **Bridge the Gap** - 기존의 최고 품질 한국어 TTS 엔진들은 Python 3.10/3.11만 지원합니다.
 > 이 프로젝트는 Docker를 통해 Python 3.12+ 앱에서 이 엔진들을 사용할 수 있게 해줍니다.
 
 ---
@@ -222,3 +222,4 @@ TTS 엔진들은 각자의 라이선스를 따릅니다.
   <b>🌉 Bridge the Python Version Gap for Korean TTS</b><br>
   Made by Princeps
 </p>
+
